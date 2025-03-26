@@ -305,8 +305,7 @@ Jane Smith, 67890, 2-3, jane.smith@example.com
 
 Notes:
 - All imported students are initially set as first-year students
-- The year is derived from the first number in the Group-Section field
-- The group is derived from the second number in the Group-Section field
+- The group is derived from the first number in the Group-Section field
 - Date of birth is initially empty and can be edited later
 
 ## Implementation Notes
@@ -339,7 +338,7 @@ All rights reserved. This software is proprietary and confidential.
 
 ## Contact
 
-For support or inquiries, please contact the development team.
+For support or inquiries, please contact Ilyes Abbas.
 
 ---
 
