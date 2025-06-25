@@ -144,7 +144,6 @@ ENSIARY/
 ## 🛠️ Development
 
 Built using modern software engineering practices:
-- **MVC Architecture** for clean code organization
 - **Qt Signal/Slot System** for responsive UI
 - **JSON Data Persistence** for easy data management
 - **Exception Safety** with proper error handling
@@ -161,8 +160,8 @@ Feel free to fork, improve, and submit pull requests!
 
 <div align="center">
 
-**ENSIARY** - Making library management simple and efficient
+**ENSIARY** - A Better Library For ENSIA
 
-*Built with ❤️ using Qt6 and C++20*
+*Built using Qt6 and C++20*
 
 </div>
