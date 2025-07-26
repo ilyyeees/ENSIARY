@@ -1,0 +1,152 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" version="26.0.14">
+  <diagram name="ENSIARY - FINAL Complete Class Diagram" id="FINAL_CLASS_DIAGRAM">
+    <mxGraphModel dx="433909" dy="266613" grid="1" gridSize="14" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1600" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="PKG_MODELS" value="&lt;b&gt;Models&lt;/b&gt;" style="package;fontStyle=1;align=left;verticalAlign=top;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+          <mxGeometry y="420" width="1438" height="960" as="geometry" />
+        </mxCell>
+        <mxCell id="C_RESOURCE" value="&lt;b&gt;&amp;lt;&amp;lt;abstract&amp;gt;&amp;gt;&lt;br&gt;Resource&lt;/b&gt;&lt;hr style=&quot;border-color: black;&quot;&gt;&lt;div style=&quot;text-align: left;&quot;&gt;# m_id: QString&lt;br&gt;# m_title: QString&lt;br&gt;# m_author: QString&lt;br&gt;# m_publicationYear: int&lt;br&gt;# m_status: Status&lt;/div&gt;&lt;hr style=&quot;border-color: black;&quot;&gt;&lt;div style=&quot;text-align: left;&quot;&gt;+ getId(): QString&lt;br&gt;+ getStatus(): Status&lt;br&gt;+ setStatus(Status): void&lt;br&gt;&lt;i&gt;+ getDetails(): QString {abstract}&lt;/i&gt;&lt;br&gt;&lt;i&gt;+ getResourceType(): QString {abstract}&lt;/i&gt;&lt;br&gt;&lt;i&gt;+ toJson(): QJsonObject {abstract}&lt;/i&gt;&lt;br&gt;&lt;i&gt;~Resource()&lt;/i&gt;&lt;/div&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;" parent="PKG_MODELS" vertex="1">
+          <mxGeometry x="580" y="80" width="260" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="C_BOOK" value="&lt;b&gt;Book&lt;/b&gt;&lt;hr&gt;&lt;div style=&quot;text-align: left;&quot;&gt;- m_isbn: QString&lt;br&gt;- m_publisher: QString&lt;/div&gt;&lt;hr&gt;&lt;div style=&quot;text-align: left;&quot;&gt;+ getDetails(): QString&lt;br&gt;+ getResourceType(): QString&lt;/div&gt;" style="swimlane;align=center;verticalAlign=top;collapsible=0;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=1;" parent="PKG_MODELS" vertex="1">
+          <mxGeometry x="300" y="400" width="220" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="C_ARTICLE" value="&lt;b&gt;Article&lt;/b&gt;&lt;hr&gt;&lt;div style=&quot;text-align: left;&quot;&gt;- m_journal: QString&lt;br&gt;- m_doi: QString&lt;br&gt;- m_keywords: QStringList&lt;/div&gt;&lt;hr&gt;&lt;div style=&quot;text-align: left;&quot;&gt;+ getDetails(): QString&lt;br&gt;+ getResourceType(): QString&lt;/div&gt;" style="swimlane;align=center;verticalAlign=top;collapsible=0;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="PKG_MODELS" vertex="1">
+          <mxGeometry x="540" y="400" width="220" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="C_THESIS" value="&lt;b&gt;Thesis&lt;/b&gt;&lt;hr&gt;&lt;div style=&quot;text-align: left;&quot;&gt;- m_university: QString&lt;br&gt;- m_supervisor: QString&lt;br&gt;- m_keywords: QStringList&lt;/div&gt;&lt;hr&gt;&lt;div style=&quot;text-align: left;&quot;&gt;+ getDetails(): QString&lt;br&gt;+ getResourceType(): QString&lt;/div&gt;" style="swimlane;align=center;verticalAlign=top;collapsible=0;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="PKG_MODELS" vertex="1">
+          <mxGeometry x="780" y="400" width="220" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="C_DIGITALCONTENT" value="&lt;b&gt;DigitalContent&lt;/b&gt;&lt;hr&gt;&lt;div style=&quot;text-align: left;&quot;&gt;- m_url: QUrl&lt;br&gt;- m_fileFormat: QString&lt;/div&gt;&lt;hr&gt;&lt;div style=&quot;text-align: left;&quot;&gt;+ getDetails(): QString&lt;br&gt;+ getResourceType(): QString&lt;/div&gt;" style="swimlane;align=center;verticalAlign=top;collapsible=0;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="PKG_MODELS" vertex="1">
+          <mxGeometry x="1020" y="400" width="220" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="C_USER" value="&lt;b&gt;User&lt;/b&gt;&lt;hr&gt;&lt;div style=&quot;text-align: left;&quot;&gt;- m_userId: QString&lt;br&gt;- m_firstName: QString&lt;br&gt;- m_lastName: QString&lt;br&gt;- m_currentLoans: vector&amp;lt;Loan*&amp;gt;&lt;br&gt;- m_loanHistory: vector&amp;lt;Loan*&amp;gt;&lt;/div&gt;&lt;hr&gt;&lt;div style=&quot;text-align: left;&quot;&gt;+ canBorrow(): bool&lt;br&gt;+ addCurrentLoan(Loan*): void&lt;br&gt;+ returnLoan(loanId): void&lt;/div&gt;" style="swimlane;align=center;verticalAlign=top;collapsible=0;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="PKG_MODELS" vertex="1">
+          <mxGeometry x="20" y="480" width="260" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="C_LOAN" value="&lt;b&gt;Loan&lt;/b&gt;&lt;hr&gt;&lt;div style=&quot;text-align: left;&quot;&gt;- m_loanId: QString&lt;br&gt;- m_userId: QString&lt;br&gt;- m_resourceId: QString&lt;br&gt;- m_borrowDate: QDateTime&lt;br&gt;- m_dueDate: QDateTime&lt;/div&gt;&lt;hr&gt;&lt;div style=&quot;text-align: left;&quot;&gt;+ isOverdue(): bool&lt;br&gt;+ canBeRenewed(): bool&lt;/div&gt;" style="swimlane;align=center;verticalAlign=top;collapsible=0;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="PKG_MODELS" vertex="1">
+          <mxGeometry x="462" y="580" width="240" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="C_RESERVATION" value="&lt;b&gt;Reservation&lt;/b&gt;&lt;hr&gt;&lt;div style=&quot;text-align: left;&quot;&gt;- m_reservationId: QString&lt;br&gt;- m_userId: QString&lt;br&gt;- m_resourceId: QString&lt;br&gt;- m_reservationDate: QDateTime&lt;/div&gt;&lt;hr&gt;&lt;div style=&quot;text-align: left;&quot;&gt;+ isExpired(): bool&lt;/div&gt;" style="swimlane;align=center;verticalAlign=top;collapsible=0;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="PKG_MODELS" vertex="1">
+          <mxGeometry x="882" y="580" width="240" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="NOTE_AGG" value="&lt;b&gt;Aggregation vs. Composition&lt;/b&gt;&lt;br&gt;The relationship between User and Loan is &lt;b&gt;Aggregation&lt;/b&gt;. A User &#39;has&#39; loans, but the loans&#39; lifetimes are managed by LibraryManager. The User only holds non-owning pointers." style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#fff2cc;strokeColor=#d6b656;" parent="PKG_MODELS" vertex="1">
+          <mxGeometry x="-28" y="220" width="360" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="R_NOTE_AGG_CONN" style="dashed=1;endArrow=none;html=1;" parent="PKG_MODELS" source="NOTE_AGG" target="C_USER" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vguj23HEO3W3WB3_9i1b-8" value="" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=1;entryDx=0;entryDy=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="PKG_MODELS" source="C_DIGITALCONTENT" target="C_RESOURCE">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="500" y="440" as="sourcePoint" />
+            <mxPoint x="550" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PKG_SERVICES" value="&lt;b&gt;Services&lt;/b&gt;" style="package;fontStyle=1;align=left;verticalAlign=top;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="PKG_MODELS" vertex="1">
+          <mxGeometry x="490" y="-266" width="700" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="C_LIBRARYMANAGER" value="&lt;b&gt;LibraryManager&lt;/b&gt;&lt;hr&gt;&lt;div style=&quot;text-align: left;&quot;&gt;- m_resources: vector&amp;lt;unique_ptr&amp;lt;Resource&amp;gt;&amp;gt;&lt;br&gt;- m_users: vector&amp;lt;unique_ptr&amp;lt;User&amp;gt;&amp;gt;&lt;br&gt;- m_loans: vector&amp;lt;unique_ptr&amp;lt;Loan&amp;gt;&amp;gt;&lt;br&gt;- m_reservations: vector&amp;lt;unique_ptr&amp;lt;Reservation&amp;gt;&amp;gt;&lt;/div&gt;&lt;hr&gt;&lt;div style=&quot;text-align: left;&quot;&gt;+ addResource(...): void&lt;br&gt;+ borrowResource(...): void&lt;br&gt;+ returnResource(...): void&lt;/div&gt;" style="swimlane;align=center;verticalAlign=top;collapsible=0;html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;" parent="PKG_SERVICES" vertex="1">
+          <mxGeometry x="380" y="60" width="300" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="C_PERSISTENCE" value="&lt;b&gt;PersistenceService&lt;/b&gt;&lt;hr&gt;&lt;hr&gt;&lt;div style=&quot;text-align: left;&quot;&gt;+ saveData(manager): void&lt;br&gt;+ loadData(manager): void&lt;/div&gt;" style="swimlane;align=center;verticalAlign=top;collapsible=0;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="PKG_SERVICES" vertex="1">
+          <mxGeometry x="40" y="80" width="240" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="R_LM_USER" style="endArrow=diamondThin;endFill=1;startFill=0;html=1;exitX=0;exitY=1;entryX=1;entryY=0;" parent="PKG_MODELS" source="C_LIBRARYMANAGER" target="C_USER" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="R_LM_USER_CARD_S" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="R_LM_USER" vertex="1" connectable="0">
+          <mxGeometry x="-0.8" as="geometry" />
+        </mxCell>
+        <mxCell id="R_LM_USER_CARD_T" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="R_LM_USER" vertex="1" connectable="0">
+          <mxGeometry x="0.8" as="geometry" />
+        </mxCell>
+        <mxCell id="R_LM_RESOURCE" style="endArrow=diamondThin;endFill=1;startFill=0;html=1;align=left;verticalAlign=bottom;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="PKG_MODELS" source="C_LIBRARYMANAGER" target="C_RESOURCE" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="R_LM_RESOURCE_CARD_S" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="R_LM_RESOURCE" vertex="1" connectable="0">
+          <mxGeometry x="-0.85" as="geometry" />
+        </mxCell>
+        <mxCell id="R_LM_RESOURCE_CARD_T" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="R_LM_RESOURCE" vertex="1" connectable="0">
+          <mxGeometry x="0.9" as="geometry" />
+        </mxCell>
+        <mxCell id="NOTE_POLY" value="&lt;b&gt;Polymorphism&lt;/b&gt;&lt;br&gt;The abstract &lt;b&gt;Resource&lt;/b&gt; class allows LibraryManager to manage a heterogeneous collection of items (Books, Articles, etc.) through a common interface, invoking type-specific behavior with virtual functions." style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#fff2cc;strokeColor=#d6b656;" parent="PKG_MODELS" vertex="1">
+          <mxGeometry x="896" y="145" width="260" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="R_NOTE_POLY_CONN" style="dashed=1;endArrow=none;html=1;" parent="PKG_MODELS" source="NOTE_POLY" target="C_RESOURCE" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NOTE_LM" value="&lt;b&gt;Central Controller&lt;/b&gt;&lt;br&gt;LibraryManager uses &lt;b&gt;Composition&lt;/b&gt; to manage the lifetime of all major model objects via std::unique_ptr. It acts as the single source of truth for the system&#39;s state." style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#fff2cc;strokeColor=#d6b656;" parent="PKG_MODELS" vertex="1">
+          <mxGeometry x="1218" y="-28" width="220" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="R_NOTE_LM_CONN" style="dashed=1;endArrow=none;html=1;" parent="PKG_MODELS" source="NOTE_LM" target="C_LIBRARYMANAGER" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PKG_UI" value="&lt;b&gt;UI&lt;/b&gt;" style="package;fontStyle=1;align=left;verticalAlign=top;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+          <mxGeometry x="56" y="196" width="400" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="C_MAINWINDOW" value="&lt;b&gt;MainWindow&lt;/b&gt;&lt;hr&gt;&lt;div style=&quot;text-align: left;&quot;&gt;- m_libraryManager: unique_ptr&lt;...&gt;&lt;br&gt;- m_persistenceService: unique_ptr&lt;...&gt;&lt;br&gt;- ui: Ui::MainWindow*&lt;/div&gt;&lt;hr&gt;&lt;div style=&quot;text-align: left;&quot;&gt;+ onBorrowResourceClicked(): void&lt;br&gt;+ onAddResourceClicked(): void&lt;br&gt;+ onReturnResourceClicked(): void&lt;/div&gt;" style="swimlane;align=center;verticalAlign=top;collapsible=0;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="PKG_UI" vertex="1">
+          <mxGeometry x="50" y="80" width="300" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="R_BOOK_RESOURCE" style="endArrow=block;endFill=0;html=1;exitX=0.5;exitY=0;entryX=0.25;entryY=1;" parent="1" source="C_BOOK" target="C_RESOURCE" edge="1" />
+        <mxCell id="R_ARTICLE_RESOURCE" style="endArrow=block;endFill=0;html=1;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" parent="1" source="C_ARTICLE" target="C_RESOURCE" edge="1" />
+        <mxCell id="R_THESIS_RESOURCE" style="endArrow=block;endFill=0;html=1;exitX=0.5;exitY=0;entryX=0.75;entryY=1;" parent="1" source="C_THESIS" target="C_RESOURCE" edge="1" />
+        <mxCell id="R_DIGITAL_RESOURCE" style="endArrow=block;endFill=0;html=1;exitX=0.5;exitY=0;entryX=0.9;entryY=1;" parent="1" source="C_DIGITALCONTENT" target="C_RESOURCE" edge="1" />
+        <mxCell id="R_USER_LOAN" style="endArrow=diamondThin;endFill=0;startFill=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="1" source="C_USER" target="C_LOAN" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="R_USER_LOAN_CARD_S" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="R_USER_LOAN" vertex="1" connectable="0">
+          <mxGeometry x="-0.8" as="geometry" />
+        </mxCell>
+        <mxCell id="R_USER_LOAN_CARD_T" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="R_USER_LOAN" vertex="1" connectable="0">
+          <mxGeometry x="0.8" as="geometry" />
+        </mxCell>
+        <mxCell id="R_LOAN_USER" style="endArrow=open;html=1;endFill=0;dashed=0;exitX=0;exitY=0.75;entryX=1;entryY=0.25;" parent="1" source="C_LOAN" target="C_USER" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="R_LOAN_RESOURCE" style="endArrow=open;html=1;endFill=0;dashed=0;exitX=0.5;exitY=0;entryX=0.35;entryY=1;" parent="1" source="C_LOAN" target="C_RESOURCE" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="R_RESERVATION_USER" style="endArrow=open;html=1;endFill=0;dashed=0;exitX=0;exitY=0.75;entryX=1;entryY=0.75;" parent="1" source="C_RESERVATION" target="C_USER" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="R_RESERVATION_RESOURCE" style="endArrow=open;html=1;endFill=0;dashed=0;exitX=0.75;exitY=0;entryX=0.65;entryY=1;" parent="1" source="C_RESERVATION" target="C_RESOURCE" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="R_MW_LM" style="dashed=1;endArrow=open;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.25;" parent="1" source="C_MAINWINDOW" target="C_LIBRARYMANAGER" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="R_MW_LM_LABEL" value="&amp;lt;&amp;lt;uses&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="R_MW_LM" vertex="1" connectable="0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="R_MW_PS" style="dashed=1;endArrow=open;html=1;exitX=1;exitY=0.25;entryX=0;entryY=0.5;" parent="1" source="C_MAINWINDOW" target="C_PERSISTENCE" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="R_MW_PS_LABEL" value="&amp;lt;&amp;lt;uses&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="R_MW_PS" vertex="1" connectable="0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vguj23HEO3W3WB3_9i1b-4" value="" style="endArrow=none;html=1;rounded=0;exitX=0.936;exitY=-0.036;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="C_BOOK">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="570" y="820" as="sourcePoint" />
+            <mxPoint x="620" y="760" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="620" y="760" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vguj23HEO3W3WB3_9i1b-5" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="C_ARTICLE">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="860" as="sourcePoint" />
+            <mxPoint x="670" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vguj23HEO3W3WB3_9i1b-7" value="" style="endArrow=none;html=1;rounded=0;exitX=0.106;exitY=0.024;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="C_THESIS">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="860" as="sourcePoint" />
+            <mxPoint x="840" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

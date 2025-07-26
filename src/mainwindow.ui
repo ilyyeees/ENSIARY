@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ENSIARY - Library Management System</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/icons/library.png</normaloff>:/icons/library.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="resourceTab">
+       <attribute name="title">
+        <string>Resource Management</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="resourceLayout">
+        <item>
+         <widget class="QGroupBox" name="searchGroupBox">
+          <property name="title">
+           <string>Search and Filter</string>
+          </property>
+          <layout class="QHBoxLayout" name="searchLayout">
+           <item>
+            <widget class="QLabel" name="searchLabel">
+             <property name="text">
+              <string>Search:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="resourceSearchEdit">
+             <property name="placeholderText">
+              <string>Enter title, author, or keywords...</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="categoryLabel">
+             <property name="text">
+              <string>Category:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="resourceCategoryFilter">
+             <item>
+              <property name="text">
+               <string>All Categories</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Book</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Article</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Thesis</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Digital Content</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="statusLabel">
+             <property name="text">
+              <string>Status:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="resourceStatusFilter">
+             <item>
+              <property name="text">
+               <string>All Status</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Available</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Borrowed</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Reserved</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="resourceTable">
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+          </property>
+          <attribute name="horizontalHeaderStretchLastSection">
+           <bool>true</bool>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Title</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Author</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Year</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Category</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Status</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="resourceButtonLayout">
+          <item>
+           <widget class="QPushButton" name="addResourceBtn">
+            <property name="text">
+             <string>Add Resource</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="editResourceBtn">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Edit Resource</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="removeResourceBtn">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Remove Resource</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="borrowResourceBtn">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Borrow Resource</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="reserveResourceBtn">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Reserve Resource</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="refreshResourcesBtn">
+            <property name="text">
+             <string>Refresh</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="userTab">
+       <attribute name="title">
+        <string>User Management</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="userLayout">
+        <item>
+         <widget class="QGroupBox" name="userSearchGroupBox">
+          <property name="title">
+           <string>Search and Filter</string>
+          </property>
+          <layout class="QHBoxLayout" name="userSearchLayout">
+           <item>
+            <widget class="QLabel" name="userSearchLabel">
+             <property name="text">
+              <string>Search:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="userSearchEdit">
+             <property name="placeholderText">
+              <string>Enter name, email, or user ID...</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="userTypeLabel">
+             <property name="text">
+              <string>Type:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="userTypeFilter">
+             <item>
+              <property name="text">
+               <string>All Types</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Student</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Faculty</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Staff</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Public</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="userStatusLabel">
+             <property name="text">
+              <string>Status:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="userStatusFilter">
+             <item>
+              <property name="text">
+               <string>All Status</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Active</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Inactive</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Suspended</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="userTable">
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+          </property>
+          <attribute name="horizontalHeaderStretchLastSection">
+           <bool>true</bool>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Name</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Email</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Type</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Status</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="userButtonLayout">
+          <item>
+           <widget class="QPushButton" name="addUserBtn">
+            <property name="text">
+             <string>Add User</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="editUserBtn">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Edit User</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="removeUserBtn">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Remove User</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>           <widget class="QPushButton" name="viewUserLoansBtn">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>View Loans</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="manageReservationsBtn">
+            <property name="text">
+             <string>Manage Reservations</string>
+            </property>
+            <property name="toolTip">
+             <string>Open reservation management panel</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="refreshUsersBtn">
+            <property name="text">
+             <string>Refresh</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="loanTab">
+       <attribute name="title">
+        <string>Loan Management</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="loanLayout">
+        <item>
+         <widget class="QSplitter" name="loanSplitter">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <widget class="QWidget" name="activeLoansWidget">
+           <layout class="QVBoxLayout" name="activeLoansLayout">
+            <item>
+             <widget class="QLabel" name="activeLoansLabel">
+              <property name="styleSheet">
+               <string notr="true">font-size: 12px; font-weight: bold;</string>
+              </property>
+              <property name="text">
+               <string>Active Loans</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTableWidget" name="activeLoanTable">
+              <property name="alternatingRowColors">
+               <bool>true</bool>
+              </property>
+              <property name="selectionBehavior">
+               <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+              </property>
+              <column>
+               <property name="text">
+                <string>Loan ID</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>User</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Resource</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Borrow Date</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Due Date</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Status</string>
+               </property>
+              </column>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="overdueLoansWidget">
+           <layout class="QVBoxLayout" name="overdueLoansLayout">
+            <item>
+             <widget class="QLabel" name="overdueLoansLabel">
+              <property name="styleSheet">
+               <string notr="true">font-size: 12px; font-weight: bold; color: red;</string>
+              </property>
+              <property name="text">
+               <string>Overdue Loans</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTableWidget" name="overdueLoanTable">
+              <property name="alternatingRowColors">
+               <bool>true</bool>
+              </property>
+              <property name="selectionBehavior">
+               <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+              </property>
+              <column>
+               <property name="text">
+                <string>Loan ID</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>User</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Resource</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Due Date</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Days Overdue</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Status</string>
+               </property>
+              </column>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="loanButtonLayout">
+          <item>
+           <widget class="QPushButton" name="returnBookBtn">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Return Book</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="renewLoanBtn">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Renew Loan</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="refreshLoansBtn">
+            <property name="text">
+             <string>Refresh</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="infoTab">
+       <attribute name="title">
+        <string>Library Information</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="infoLayout">
+        <item>
+         <layout class="QVBoxLayout" name="leftInfoLayout">
+          <item>
+           <widget class="QGroupBox" name="libraryInfoGroupBox">
+            <property name="title">
+             <string>Library Information</string>
+            </property>
+            <layout class="QVBoxLayout" name="libraryInfoLayout">
+             <item>
+              <widget class="QLabel" name="libraryNameLabel">
+               <property name="styleSheet">
+                <string notr="true">font-size: 16px; font-weight: bold;</string>
+               </property>
+               <property name="text">
+                <string>ENSIARY Library Management System</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="operatingHoursLabel">
+               <property name="text">
+                <string>Monday-Friday: 8:00 AM - 8:00 PM
+Saturday-Sunday: 10:00 AM - 6:00 PM</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="eventsGroupBox">
+            <property name="title">
+             <string>Upcoming Events</string>
+            </property>
+            <layout class="QVBoxLayout" name="eventsLayout">
+             <item>
+              <widget class="QListWidget" name="upcomingEventsList"/>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="eventButtonLayout">
+               <item>
+                <widget class="QPushButton" name="addEventBtn">
+                 <property name="text">
+                  <string>Add Event</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="removeEventBtn">
+                 <property name="text">
+                  <string>Remove Event</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_7">
+                 <property name="orientation">
+                  <enum>Qt::Orientation::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="rightInfoLayout">
+          <item>
+           <widget class="QGroupBox" name="statisticsGroupBox">
+            <property name="title">
+             <string>Library Statistics</string>
+            </property>
+            <layout class="QVBoxLayout" name="statisticsLayout">
+             <item>
+              <widget class="QTextEdit" name="statisticsText">
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+               <property name="html">
+                <string>&lt;!DOCTYPE HTML PUBLIC &quot;-
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt;&quot;&gt;Loading statistics...&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="refreshStatsBtn">
+               <property name="text">
+                <string>Refresh Statistics</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

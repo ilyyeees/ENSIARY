@@ -1,0 +1,116 @@
+# Qt-specific files
+*.pro.user
+*.pro.user.*
+*.qbs.user
+*.qbs.user.*
+*.moc
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+*.qmlc
+*.jsc
+Makefile*
+*build-*
+*.qm
+.qmake.cache
+.qmake.stash
+
+# Qt unit tests
+target_wrapper.*
+
+# QtCreator
+*.autosave
+
+# QtCreator Qml
+*.qmlproject.user.lock
+*.qmlproject.user
+
+# QtCreator CMake
+CMakeLists.txt.user*
+
+# C++ objects and libs
+*.slo
+*.lo
+*.o
+*.a
+*.la
+*.lai
+*.so
+*.so.*
+*.dll
+*.dylib
+
+# Qt-es
+object_script.*.Release
+object_script.*.Debug
+*_plugin_import.cpp
+/.qmake.cache
+/.qmake.stash
+*.pro.user.*
+*_qmlcache.qrc
+
+# Compilation results
+/debug/
+/release/
+
+# Build directories
+build*/
+Build*/
+BUILD*/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-*
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows specific
+*.exe
+*.pdb
+*.ilk
+*.obj
+*.lib
+*.exp
+
+# Keep data files but ignore large build artifacts
+build/**/debug/*.exe
+build/**/debug/*.o
+build/**/debug/*.obj
+build/**/debug/moc_*
+build/**/debug/qrc_*
+build/**/debug/ui_*
+build/**/debug/Makefile*
+build/**/release/*.exe
+build/**/release/*.o
+build/**/release/*.obj
+build/**/release/moc_*
+build/**/release/qrc_*
+build/**/release/ui_*
+build/**/release/Makefile*
+
+# Keep the important data files
+!build/**/data/
+!build/**/data/*.json
+
+# User-specific QtCreator settings
+*.pro.user*
+
+# Build artifacts that should be ignored
+*.resource_res.o
+*_resource_res.o

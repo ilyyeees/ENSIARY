@@ -1,0 +1,167 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" version="27.1.5">
+  <diagram name="Add User Sequence" id="add-user-sequence">
+    <mxGraphModel dx="1042" dy="562" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="admin-actor" value="Administrator" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="100" y="50" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mainwindow-lifeline" value="MainWindow" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="250" y="50" width="100" height="600" as="geometry" />
+        </mxCell>
+        <mxCell id="activation1" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#ffe6cc;strokeColor=#d79b00;" parent="mainwindow-lifeline" vertex="1">
+          <mxGeometry x="45" y="100" width="10" height="550" as="geometry" />
+        </mxCell>
+        <mxCell id="userdialog-lifeline" value="UserDialog" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="450" y="50" width="100" height="600" as="geometry" />
+        </mxCell>
+        <mxCell id="activation2" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#d5e8d4;strokeColor=#82b366;" parent="userdialog-lifeline" vertex="1">
+          <mxGeometry x="45" y="130" width="10" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="user-lifeline" value="User" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="650" y="50" width="100" height="600" as="geometry" />
+        </mxCell>
+        <mxCell id="activation3" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="user-lifeline" vertex="1">
+          <mxGeometry x="45" y="300" width="10" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="librarymanager-lifeline" value="LibraryManager" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="850" y="50" width="100" height="600" as="geometry" />
+        </mxCell>
+        <mxCell id="activation4" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#e1d5e7;strokeColor=#9673a6;" parent="librarymanager-lifeline" vertex="1">
+          <mxGeometry x="45" y="360" width="10" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="persistence-lifeline" value="PersistenceService" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="1050" y="50" width="100" height="600" as="geometry" />
+        </mxCell>
+        <mxCell id="activation5" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#f8cecc;strokeColor=#b85450;" parent="persistence-lifeline" vertex="1">
+          <mxGeometry x="45" y="470" width="10" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="msg1" value="1: Click &quot;Add User&quot;" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;rounded=0;" parent="1" target="mainwindow-lifeline" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="115" y="150" as="sourcePoint" />
+            <mxPoint x="295" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg2" value="2: new UserDialog()" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;rounded=0;" parent="1" target="userdialog-lifeline" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="180" as="sourcePoint" />
+            <mxPoint x="495" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg3" value="3: show dialog" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;rounded=0;" parent="1" target="userdialog-lifeline" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="210" as="sourcePoint" />
+            <mxPoint x="495" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg4" value="4: Fill user information" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;rounded=0;" parent="1" target="userdialog-lifeline" edge="1" source="activation1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="115" y="240" as="sourcePoint" />
+            <mxPoint x="495" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg5" value="5: Click &quot;Save&quot;" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;rounded=0;" parent="1" target="userdialog-lifeline" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="190" as="sourcePoint" />
+            <mxPoint x="495" y="270" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="310" y="190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg6" value="6: validateUserData()" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;rounded=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="500" y="300" as="sourcePoint" />
+            <mxPoint x="500" y="320" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="580" y="300" />
+              <mxPoint x="580" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg7" value="7: new User()" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;rounded=0;" parent="1" target="user-lifeline" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="500" y="350" as="sourcePoint" />
+            <mxPoint x="695" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg8" value="8: setUserData()" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;rounded=0;" parent="1" target="user-lifeline" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="500" y="380" as="sourcePoint" />
+            <mxPoint x="695" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg9" value="9: addUser(user)" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;rounded=0;" parent="1" target="librarymanager-lifeline" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="500" y="410" as="sourcePoint" />
+            <mxPoint x="895" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg10" value="10: validateUniqueId()" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;rounded=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="900" y="440" as="sourcePoint" />
+            <mxPoint x="900" y="460" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="980" y="440" />
+              <mxPoint x="980" y="460" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg11" value="11: addToUserList()" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;rounded=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="900" y="480" as="sourcePoint" />
+            <mxPoint x="900" y="500" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="980" y="480" />
+              <mxPoint x="980" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg12" value="12: saveData()" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;rounded=0;" parent="1" target="persistence-lifeline" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="900" y="520" as="sourcePoint" />
+            <mxPoint x="1095" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg13" value="13: user added successfully" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endFill=0;exitX=0;exitY=0;rounded=0;" parent="1" source="librarymanager-lifeline" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="895" y="550" as="sourcePoint" />
+            <mxPoint x="500" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg14" value="14: close dialog" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endFill=0;exitX=0;exitY=0;rounded=0;" parent="1" source="userdialog-lifeline" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="495" y="580" as="sourcePoint" />
+            <mxPoint x="300" y="580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg15" value="15: refreshUserTable()" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;rounded=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="610" as="sourcePoint" />
+            <mxPoint x="300" y="630" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="380" y="610" />
+              <mxPoint x="380" y="630" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="title" value="Sequence Diagram: Add User Workflow" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="400" y="10" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="alt-condition" value="[validation fails]" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=2;" parent="1" vertex="1">
+          <mxGeometry x="460" y="300" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="alt-msg" value="show error message" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endFill=0;rounded=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="500" y="340" as="sourcePoint" />
+            <mxPoint x="115" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="note1" value="Note: The UserDialog validates all input data&#xa;before creating a new User object. The system&#xa;ensures unique user IDs and proper data&#xa;persistence." style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="1200" y="150" width="250" height="100" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
